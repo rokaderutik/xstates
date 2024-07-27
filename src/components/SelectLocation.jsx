@@ -101,7 +101,7 @@ export default function SelectLocation() {
     return (
         <div className="wrapper">
             <h1>Select Location</h1>
-            {/* <div className="select_wrapper">
+            <div className="select_wrapper">
                 <div 
                     className="input" 
                     style={{width: "200px"}}
@@ -180,9 +180,11 @@ export default function SelectLocation() {
                         </div>
                     }   
                 </div>
-            </div> */}
+            </div>
 
-            <div className="select_wrapper">
+
+            {/* using select tag for test cases */}
+            {/* <div className="select_wrapper">
                 <select 
                     className="input" 
                     style={{width: "200px"}}
@@ -191,7 +193,7 @@ export default function SelectLocation() {
                     // ref={countryRef}
                     // onClick={toogleCountry}
                 >
-                    {/* {country ? country : "Select Country"} */}
+                    
                     <option className="dropdown-item" defaultChecked>Select Country</option>
                             {
                                 countryList.map((countryName) => {
@@ -258,7 +260,7 @@ export default function SelectLocation() {
                                     })
                                 }  
                 </select>
-            </div>
+            </div> */}
 
             {
                 city &&
