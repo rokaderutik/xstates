@@ -262,7 +262,7 @@ export default function SelectLocation() {
 
             {
                 city &&
-                <h2>You Selected {city}, {state}, {country}</h2>
+                <h2>You selected {city}, {state}, {country}</h2> 
             }
         </div>
     );
