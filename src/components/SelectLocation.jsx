@@ -101,7 +101,7 @@ export default function SelectLocation() {
     return (
         <div className="wrapper">
             <h1>Select Location</h1>
-            <div className="select_wrapper">
+            {/* <div className="select_wrapper">
                 <div 
                     className="input" 
                     style={{width: "200px"}}
@@ -180,6 +180,84 @@ export default function SelectLocation() {
                         </div>
                     }   
                 </div>
+            </div> */}
+
+            <div className="select_wrapper">
+                <select 
+                    className="input" 
+                    style={{width: "200px"}}
+                    value={country}
+                    onChange={(e) => handleCountryChange(e.target.value)}
+                    // ref={countryRef}
+                    // onClick={toogleCountry}
+                >
+                    {/* {country ? country : "Select Country"} */}
+                    <option className="dropdown-item" defaultChecked>Select Country</option>
+                            {
+                                countryList.map((countryName) => {
+                                    return (
+                                        <option 
+                                            key={countryName}
+                                            value={countryName}
+                                            className={`dropdown-item ${countryName === country ? 'dropdown-item-selected' : ""}`}
+                                            // onClick={() => handleCountryChange(countryName)}
+                                        >
+                                            {countryName}
+                                        </option>
+                                    );
+                                })
+                            }
+                </select>
+
+                <select 
+                    className="input" 
+                    value={state}
+                    onChange={(e) => handleStateChange(e.target.value)}
+                    // disabled={country ? false : true}
+                    // ref={stateRef}
+                    // onClick={toogleState}
+                >
+                    <option className="dropdown-item" defaultChecked>Select State</option>
+                                {
+                                    stateList.map((stateName) => {
+                                        return (
+                                            <option 
+                                                key={stateName}
+                                                value={stateName}
+                                                className={`dropdown-item ${stateName === state ? 'dropdown-item-selected' : ""}`}
+                                                // onClick={() => handleStateChange(stateName)}
+                                            >
+                                                {stateName}
+                                            </option>
+                                        );
+                                    })
+                                }
+                </select>
+
+                <select 
+                    className="input" 
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    // disabled={state ? false : true}
+                    // ref={cityRef}
+                    // onClick={toogleCity}
+                >
+                    <option className="dropdown-item" defaultChecked>Select City</option>
+                                {
+                                    cityList.map((cityName) => {
+                                        return (
+                                            <option 
+                                                key={cityName}
+                                                value={cityName}
+                                                className={`dropdown-item ${cityName === city ? 'dropdown-item-selected' : ""}`}
+                                                // onClick={() => setCity(cityName)}
+                                            >
+                                                {cityName}
+                                            </option>
+                                        );
+                                    })
+                                }  
+                </select>
             </div>
 
             {
